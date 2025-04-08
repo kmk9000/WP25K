@@ -4,14 +4,14 @@
 
 // Koska käytössä on prompt, tämä toimii selaimessa html-sivun kautta.
 function countEvenNumbers() {
-  let answer = 0;
+  let count = 0;
   for (let i = 1; i <= 20; i++) {
-    let input = prompt(`Anna 20 lukua:${i}`);
+    let input = prompt(parseFloat("Anna 20 lukua:"));
     let number = Number(input);
     if (number % 2 === 0) {
-      answer++;
+      count++;
     }
   }
-  console.log(`You entered ${answer} even numbers out of 20`);
+  console.log(`You entered ${count} even numbers out of 20`);
 }
 countEvenNumbers();

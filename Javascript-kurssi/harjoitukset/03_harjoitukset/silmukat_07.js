@@ -9,5 +9,22 @@ Kirjoita funktio nimeltä sumAndAverage:
 
 // Koska käytössä on prompt, tämä toimii selaimessa html-sivun kautta.
 function sumAndAverage() {
-  userInput();
+  let sum = 0;
+  let count = 0;
+  let numbers = [];
+  for (let i = 0; i < 10; i++) {
+    let input = parseFloat(prompt("Give ten numbers"));
+    number = Number(input);
+    numbers.push(number); //adds numbers the array
+    sum += number;
+    count++;
+  }
+  let average = sum / count;
+  let max = Math.max(...numbers); //"..." spread operator for the array
+  let min = Math.min(...numbers);
+  console.log("The sum of your numbers is:", sum);
+  console.log("The average of your numbers is", average);
+  console.log("The largest number of those you gave is:", max);
+  console.log("The smallest number you gave is:", min);
 }
+sumAndAverage();

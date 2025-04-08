@@ -9,7 +9,7 @@ bls**=2 (potenssiin kaksi edellienen arvo)
 FUNCTIONS
 
 let a="1438", let b = 1438 (sama numeroarvo, eri tyyppi)
-a==b (tarkistaa onko sama arvo/value); a===b (onko sama tyyppi/type);
+a==b (tarkistaa onko sama arvo/value); a===b (onko sama tyyppi/type, conditional true );
 !=, !== (negaatio samasta kysymyksestä)
 
 nuolifunktiota korvaa "function" 
