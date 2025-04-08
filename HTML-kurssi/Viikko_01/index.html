@@ -1,0 +1,93 @@
+<!-- Tämä on kommentti -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/styles.css" />
+  </head>
+  <body>
+    <h1>Tämä on tekstiotsikko</h1>
+
+    <!--Lohkoelementti (block element) on isompi elementti johon sijoitetaan rivinsisäiset  elementit (inline element)-->
+    <p>
+      <!--inline element--><strong
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit.</strong
+      ><br />Aperiam quibusdam laudantium adipisci totam fugiat atque ea in enim
+      eius maxime laborum, culpa harum deleniti fuga,
+      <em><u>accusamus necessitatibus dicta minima!</u></em> Et.
+    </p>
+
+    <p>
+      Lorem ipsum dolor sit amet <u>consectetur</u> adipisicing elit. Iure quis
+      at rerum ducimus cum, <q>voluptatum modi</q>. Porro sunt dignissimos ex,
+      officia, nulla voluptates nostrum quod hic itaque vero, voluptatibus
+      corrupti. E=mc<sup>2</sup>
+    </p>
+    <hr />
+    <blockquote>"Omaa tekstiä tähän!!"</blockquote>
+    <h2>HTML Lists</h2>
+    <p><strong>Unordered lists and urdered lists:</strong></p>
+    <ul>
+      <li>
+        Unordered list 1: Consectetur nostrum cupiditate, natus reprehenderit
+        quia at aut sunt quod nam nulla alias ullam sit eaque nemo facere
+        molestias quisquam eveniet blanditiis!
+      </li>
+      <li>
+        Unordered list 2: Labore molestiae est provident hic non consequatur
+        cumque, mollitia repellendus, nihil commodi explicabo ipsam qui fugit
+        voluptatum tenetur quam, officia voluptate tempore.
+      </li>
+      <li>
+        Unordered list 3: Ut vero cumque, pariatur minus repudiandae, voluptas
+        facilis totam voluptatibus, exercitationem dolore officiis quaerat.
+        Voluptatibus, eaque magnam. Id et dolores sit non.
+      </li>
+    </ul>
+    <ol>
+      <li>
+        Ordered list 1: Veniam provident illum debitis quam, exercitationem
+        corporis, dicta reiciendis amet inventore harum eos eligendi blanditiis!
+        Quia provident debitis dolorum voluptas ab corporis.
+      </li>
+      <li>
+        Ordered list 2: Facilis, placeat cupiditate! Voluptatem ducimus natus
+        maiores, soluta, blanditiis, iure fugit molestias tenetur exercitationem
+        cum velit eaque maxime expedita necessitatibus nostrum eius.
+      </li>
+      <li>
+        Ordered list 3: Totam, perspiciatis! Perspiciatis, animi. Reprehenderit,
+        nam, aliquam doloremque nemo quia in, tempora quae consequuntur quod
+        eaque facilis reiciendis ad saepe beatae quisquam.
+      </li>
+    </ol>
+    <a href="https://en.wikipedia.org/wiki/Penguin">
+      <!--target="blank" opens new tab-->
+      <strong>WTF is a penguin anyway</strong></a
+    >
+    <br />
+    <a href="https://en.wikipedia.org/wiki/Penguin" target="blank">
+      <img
+        style="max-width: 30%"
+        src="images/penguin_warrior.png"
+        alt="fierce penguin warrior with a sword and viking helmet coming to get you."
+      />
+    </a>
+    <br />
+    <img
+      style="max-width: 30%"
+      src="images/South_Shetland-2016-Deception_Island–Chinstrap_penguin_(Pygoscelis_antarctica)_04.jpg"
+      alt="Chinstrap Penguin, source Wikipedia"
+    />
+    <img
+      style="max-width: 30%"
+      src="images/Aptenodytes_forsteri_-Snow_Hill_Island,_Antarctica_-adults_and_juvenile-8.jpg"
+      alt="Emperor Penguin Family, source Wikipedia"
+    />
+    <!--"alt" for accessability reasons, will show up if image fails or can be used as an alternative-->
+    <script src="./js/script.js" defer></script>
+    <!--html should/needs to process first, so either put javascript after html or use "defer" to make it prcoess after, html needs to load elements (defered processes will also follow top-to-bottom order)-->
+  </body>
+</html>
