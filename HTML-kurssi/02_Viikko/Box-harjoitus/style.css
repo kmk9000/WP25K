@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* "*" god rule, controls everything,
+is the default that can be overridden when specified*/
+body {
+  background-color: bisque;
+}
+/*color changes text
+background*/
+header {
+  color: white;
+  background: #333;
+  padding: 25px;
+}
+
+main {
+  padding: 10px;
+}
+
+div {
+  color: aliceblue;
+  background: gray;
+  height: 200px;
+  width: 200px;
+  margin: 0 10px 10px 0px;
+  display: inline-block;
+}
+
+.box1 {
+  border: 5px dotted white;
+  text-align: center;
+  padding: 50px;
+}
+
+.box2 {
+  border: 7px double seagreen;
+  background-color: cornflowerblue;
+  align-content: center;
+  text-align: center;
+}
+.box3 {
+  border-style: groove;
+  border-width: 10px;
+  border-color: white blue red yellow;
+}
+
+.box4 {
+}
+
+.box5 {
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magic 8 Ball</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding-top: 50px;
+      }
+      input,
+      button {
+        padding: 10px;
+        font-size: 16px;
+        margin: 10px;
+      }
+      #answer {
+        margin-top: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        color: darkblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dicover your fate below with the Magic 8 Ball:</h1>
+    <input
+      type="text"
+      id="questionInput"
+      placeholder="Ask a yes or no question"
+    />
+    <button onclick="magic8Ball()">Ask</button>
+    <div id="answer"></div>
+    <script>
+      src = "ehtolause_bonus.js";
+    </script>
+  </body>
+</html>

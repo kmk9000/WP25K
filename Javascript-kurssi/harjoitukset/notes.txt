@@ -1,0 +1,44 @@
+
+let a
+a=12
+a=a+2
+a+=2 (sama kuin aikaisempi rivi)
+b=2
+bls**=2 (potenssiin kaksi edellienen arvo)
+
+FUNCTIONS
+
+let a="1438", let b = 1438 (sama numeroarvo, eri tyyppi)
+a==b (tarkistaa onko sama arvo/value); a===b (onko sama tyyppi/type);
+!=, !== (negaatio samasta kysymyksestä)
+
+nuolifunktiota korvaa "function" 
+noulifunktio voi palauttaa ilman return-funktiota
+toimii vain yksirivisillä toiminnoilla (selkeys enemmin kuin tiiviys)
+
+string/merkkijono
+
+href=sijainti/location
+
+funktio on uudelleen käytettävä 
+ja reagoi tapahtumaan
+
+string=merkkijono put it in "": example: a="7"
+
+type= numbers, integers, floats, etc (javascipt is dynamic)
+
+call
+function (multiply)(a,b) ((a and b are parameters))
+console.log(smuliplu 2, 3) ((2 and 3 are arguments))
+
+
+javascript: return:n jälkeen älä lisää mitään koodia
+voi käyttää nuolifunktiota ja useampaa riviä jos käyttää myös {}
+
+function greeting(name = "Guest"){
+    return `Hello ${name}!`;
+}
+console.log(Leevi) (default value of Guest will be replaced)
+
+ehto ? josTosi : josEpätosi
+condition ? ifTrue : notTrue
