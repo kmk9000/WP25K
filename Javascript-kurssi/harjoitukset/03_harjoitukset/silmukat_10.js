@@ -4,4 +4,11 @@ Kirjoita funktio nimeltä countdownTimer:
 - Tulosta jokainen luku laskevassa järjestyksessä nollaan asti
 - Lopuksi tulosta: "Aika loppui!".
 */
-function countdownTimer() {}
+function countdownTimer() {
+  for (let i = 10; i >= 0; i--) {
+    //why does this only work with >= and not with = or <= ?
+    console.log(i);
+  }
+  console.log("Aika loppui!");
+}
+countdownTimer();

@@ -1,0 +1,42 @@
+* {
+  margin: 50;
+  padding: 50;
+  box-sizing: border-box;
+}
+body {
+  background-color: plum;
+}
+h1 {
+  font-family: "Limelight", Arial, sans-serif;
+  color: maroon;
+}
+h2 {
+  font-family: "Bungee Tint", Arial, sans-serif;
+}
+p {
+  font-family: Helvetica, sans-serif;
+  color: bisque;
+}
+strong {
+  color: black;
+}
+section {
+  padding: 50;
+  text-align: center;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(173, 12, 51, 0.8673844537815126) 80%,
+    rgba(57, 20, 175, 0.6264880952380952) 100%
+  );
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline;
+  margin: 5px;
+}

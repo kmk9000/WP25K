@@ -1,0 +1,62 @@
+* {
+  margin: 10;
+  padding: 10;
+}
+button:hover {
+  color: blue;
+  background-color: green;
+}
+body {
+  background-color: #69013b;
+}
+.hero-image {
+  background-size: cover;
+  background-image: url(images/darya-tryfanava-d55fhArDES0-unsplash.jpg);
+  font-family: "Poppins", sans-serif;
+  margin: 20px;
+  padding: 20px;
+  max-height: fit-content;
+  max-width: fit-content;
+}
+.hero-text {
+  color: #69013b;
+}
+.hero-text:hover {
+  font-size: 120%;
+}
+h1 {
+  color: gold;
+}
+h2 {
+  color: yellow;
+}
+.Course {
+  margin: 20px;
+  padding: 20px;
+  color: #fdefe7;
+  background-color: gray;
+}
+.Course:hover {
+  background-image: url(images/penguin_warrior.png);
+  background-size: 200px 300px; /* fixed dimensions */
+}
+h3 {
+  font-size: larger;
+  text-shadow: 1;
+  color: blue;
+}
+p::first-letter {
+  font-weight: bolder;
+  font-style: italic;
+}
+li:nth-child(even) {
+  color: red;
+  background-color: #fdefe7;
+}
+li:nth-child(odd) {
+  color: blue;
+  background-color: yellowgreen;
+}
+.warning {
+  color: yellow;
+}

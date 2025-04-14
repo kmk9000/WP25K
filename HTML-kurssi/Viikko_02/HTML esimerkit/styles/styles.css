@@ -1,0 +1,16 @@
+body {
+  background-color: blueviolet;
+}
+img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: aqua;
+}
+p {
+  background-color: yellow;
+  margin: 25px;
+  padding: 5px;
+  border: dashed red;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
