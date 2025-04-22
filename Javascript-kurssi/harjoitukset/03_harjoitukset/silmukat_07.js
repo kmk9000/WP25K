@@ -15,7 +15,7 @@ function sumAndAverage() {
   for (let i = 0; i < 10; i++) {
     let input = parseFloat(prompt("Give ten numbers"));
     number = Number(input);
-    numbers.push(number); //adds numbers the array
+    numbers.push(number); //adds numbers to the array
     sum += number;
     count++;
   }

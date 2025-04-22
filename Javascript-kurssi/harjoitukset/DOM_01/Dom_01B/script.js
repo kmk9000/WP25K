@@ -6,6 +6,6 @@ Lisää napille getElementById:n avulla tapahtumakäsittelijä, joka kuuntelee
 
 */
 
-document.getElementById("press").addEventListener("click", function () {
-  document.getElementById("content").textContent = "Hey World";
+document.getElementById("nappi").addEventListener("click", function () {
+  document.getElementById("numero").textContent++;
 });

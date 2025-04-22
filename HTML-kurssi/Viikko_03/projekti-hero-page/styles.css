@@ -60,3 +60,10 @@ li:nth-child(odd) {
 .warning {
   color: yellow;
 }
+header {
+  background-color: #69013b;
+  size: 50px;
+}
+footer {
+  background-color: #69013b;
+}

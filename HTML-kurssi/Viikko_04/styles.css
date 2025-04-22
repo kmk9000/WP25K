@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #246648;
+  font-family: "Poppins", Helvetica, sans-serif;
+}
+a {
+  color: orange;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+main {
+  margin: 50px auto;
+  width: 300px;
+}
+/* Form section */
+.form-wrap {
+  background: white;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  padding: 20px;
+}
+.form-wrap h1,
+.form-wrap p {
+  margin-bottom: 20px;
+}
+.form-wrap label {
+  display: block;
+  text-align: left;
+  font-size: 10px;
+  margin-bottom: 5px;
+}
+input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+button {
+  color: white;
+  background-color: #f17e34;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 75%;
+  padding: 10px;
+  align-items: center;
+}
+#conditions {
+  font-size: 0.75em;
+}
+
+#haveAnAccount {
+  color: white;
+  text-align: center;
+}

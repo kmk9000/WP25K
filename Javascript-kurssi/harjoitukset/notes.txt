@@ -42,3 +42,6 @@ console.log(Leevi) (default value of Guest will be replaced)
 
 ehto ? josTosi : josEpätosi
 condition ? ifTrue : notTrue
+
+id is for browser (what it's referring to inside html file, useful for label for, for example)
+name is for server (name sends to server to see name attributes)
