@@ -1,13 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Those variables are optional
   const form = document.getElementById("pancakeForm");
-
   const totalPriceBanner = document.getElementById("totalPrice");
-
   const totalPriceDisplay = document.getElementById("totalPriceDisplay");
-
   const seeOrderButton = document.getElementById("seeOrder");
-
   const summaryText = document.getElementById("summaryText");
 
   // These Arrays are needed
@@ -48,7 +44,35 @@ document.addEventListener("DOMContentLoaded", function () {
     const pancakeType = document.getElementById("type");
     const selectedType = pancakeType.options[pancakeType.selectedIndex];
     let total = parseFloat(selectedType.getAttribute("data-price"));
-    totalPriceBanner.textContent = total;
-    totalPriceDisplay.textContent = total;
+    // lisätään loppusummaan jokaisesta täytteestä 1€
+    // length on indeksin pituus, jos siellä on vain 1 valittu, pituus on 1 jne.
+    total += toppings.length * 1;
+
+    // haetaan lisukkeet listaan ja käsitellään lista. lisätään valittujen hinta
+    let extraChoices = document.querySelectorAll(".extra");
+    extraChoices.forEach((checkbox) => {
+      if (checkbox.checked) {
+        total = total + parseFloat(checkbox.getAttribute("data-price"));
+      }
+    });
+
+    // haetaan kuljetuksen arvo ja lisätään hinta (hinta voi olla nolla)
+    let delivery = document.querySelector("input[name='delivery']:checked");
+    total += parseFloat(delivery.getAttribute("data-price"));
+
+    // muotoillaan kokonaishinta desimaali luvuksi
+    let formattedTotal = total.toFixed(2) + "€";
+    totalPriceBanner.textContent = formattedTotal;
+    totalPriceDisplay.textContent = formattedTotal;
   }
+
+  seeOrderButton.addEventListener("click", function () {
+    // haetaan tilaajan nimi
+    const customerName = document.getElementById("customerName").value.trim();
+    // näytetään tilauksen tiedot
+    let summary = `<strong>Customer:</strong> ${
+      customerName || "(No Name)"
+    }<br>`;
+    summaryText.innerHTML = summary;
+  });
 });
