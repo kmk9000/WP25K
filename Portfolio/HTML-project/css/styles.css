@@ -7,16 +7,105 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: gainsboro;
+  background-color: lightblue;
   color: #333;
+}
+
+#hero-text:hover {
+  transform: scale(1.1);
+}
+
+.headerFooter {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #222;
+  color: #fff;
+}
+
+.menu-options {
+  display: none; /* Initially hide the options */
+  list-style: none; /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+  position: absolute; /* Allows for positioning relative to the container */
+  background-color: #222; /* Light background for the options */
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
+  z-index: 10; /* Ensure the menu appears above other elements */
+  border-radius: 10px;
+  width: 200%;
+}
+
+.menu-options li {
+  padding: 10px 15px;
+  cursor: pointer; /* Indicate that the options are clickable */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.menu-options li:hover {
+  background-color: #ddd; /* Slightly darker background on hover */
+}
+
+.menu-button {
+  background-color: #4caf50; /* Green button */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  width: 200%;
+  border-radius: 10px;
+}
+
+.menu-button:hover {
+  background-color: #367c39; /* Darker green on hover */
+}
+
+.menu-container {
+  position: relative; /* Make the container a positioning context */
+  display: inline-block; /* So it doesn't take up the whole width */
+}
+
+.hero {
+  padding: 25px;
+  background: #2a7b9b;
+  background: linear-gradient(
+    90deg,
+    rgba(42, 123, 155, 1) 0%,
+    rgba(87, 199, 133, 1) 50%,
+    rgba(237, 221, 83, 1) 100%
+  );
 }
 
 h1 {
   color: #0056b3;
   text-align: center;
-  margin-top: 20px;
+  margin-bottom: 1rem;
+}
+#main {
+  display: flex;
+  height: 50rem;
+}
+#textbox {
+  flex: 2;
+  padding: 25px;
+  margin: 25px;
+  background-color: beige;
+  border-radius: 25px;
 }
 
+p {
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+#image-container {
+  flex: 1;
+  background-image: url(/Portfolio/HTML-project/images/david-underland-p294dPax7JE-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .hero-image {
   background-image: url(/Portfolio/HTML-project/images/doremifasi-art-e22D9tInTKY-unsplash.jpg);
   background-size: cover;
@@ -25,4 +114,8 @@ h1 {
   padding: 50px;
   height: 60vh;
   width: 100%;
+}
+#otherLinks {
+  display: flex;
+  justify-content: space-around;
 }

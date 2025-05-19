@@ -7,16 +7,66 @@
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="icon" href="favicon.png" type="image/x-icon" />
   </head>
-  <header>
-    <div class="hero-image">
-      <div class="hero-text">Tähän header/hero tekstiä.</div>
-    </div>
-  </header>
   <body>
-    <h1>Tervetuloa omalle staattiselle verkkosivulleni</h1>
-    <p>Tämä on yksinkertainen staattisen HTML-projektin rakenne.</p>
-    <a href="contact.html">Contact</a>
-    <a href="about.html">About</a>
+    <!-- HEADER & NAV -->
+    <header class="headerFooter">
+      <div class="logo">Portfolio</div>
+      <div class="menu-container">
+        <button class="menu-button">Menu</button>
+        <ul class="menu-options">
+          <li>Option 1</li>
+          <li>Option 2</li>
+          <li>Option 3</li>
+        </ul>
+      </div>
+      <nav class="nav">
+        <a href="#linkkiA">linkkiA</a>
+        <a href="#linkkiB">linkkiB</a>
+        <a href="#linkkiC">linkkiC</a>
+        <a href="#linkkiD">linkkiD</a>
+      </nav>
+    </header>
+    <!-- HERO -->
+    <section class="hero">
+      <h1 id="hero-text"><b>Hero text title</b></h1>
+      <p>
+        <i
+          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, iusto
+          animi impedit, inventore ipsa eveniet beatae provident eum totam harum
+          suscipit nihil nesciunt! Molestias quaerat dolores quisquam natus
+          exercitationem deserunt?</i
+        >
+      </p>
+    </section>
+    <section id="main">
+      <div id="textbox">
+        <h1>Tervetuloa omalle staattiselle verkkosivulleni</h1>
+        <p>Tämä on yksinkertainen staattisen HTML-projektin rakenne.</p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro magni,
+          omnis, fuga rem iste quae quaerat, error perspiciatis aliquam
+          laudantium deserunt quo. Quos voluptas est nihil pariatur ad eligendi
+          inventore.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
+          vel eum minus magni, odio quasi officia quis, facilis nam, asperiores
+          ipsam! Ab molestiae quod veniam quidem numquam porro illum illo.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde velit
+          debitis eligendi itaque tempora earum ad distinctio laborum! Itaque
+          voluptatem modi enim ea tenetur cumque? Ipsum ex iure harum! Tempora?
+        </p>
+        <div id="grid"><img src="" alt="" /></div>
+      </div>
+      <div id="image-container"></div>
+    </section>
+    <section id="2ndSection"></section>
+    <footer class="headerFooter" id="otherLinks">
+      <a href="contact.html">Contact</a> <a href="about.html">About</a>
+    </footer>
+
     <script src="js/script.js"></script>
   </body>
 </html>

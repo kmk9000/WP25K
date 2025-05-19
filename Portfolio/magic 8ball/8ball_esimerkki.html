@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magic 8-Ball</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #121212;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .container {
+        text-align: center;
+        max-width: 500px;
+      }
+
+      h1 {
+        color: #ff9800;
+        margin-bottom: 30px;
+      }
+
+      .eight-ball {
+        width: 300px;
+        height: 300px;
+        background-color: black;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 30px;
+        position: relative;
+        box-shadow: 0 0 20px rgba(255, 152, 0, 0.5);
+      }
+
+      .eight-ball-inner {
+        width: 150px;
+        height: 150px;
+        background-color: #1a1a1a;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        padding: 10px;
+        font-size: 18px;
+      }
+
+      .question-input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: none;
+        font-size: 16px;
+      }
+
+      .shake-btn {
+        background-color: #ff9800;
+        color: black;
+        border: none;
+        padding: 12px 25px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+
+      .shake-btn:hover {
+        background-color: #ffb74d;
+      }
+
+      .shake {
+        animation: shake 0.5s;
+      }
+
+      @keyframes shake {
+        0% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        20% {
+          transform: translate(-10px, 0) rotate(-5deg);
+        }
+        40% {
+          transform: translate(10px, 0) rotate(5deg);
+        }
+        60% {
+          transform: translate(-10px, 0) rotate(-5deg);
+        }
+        80% {
+          transform: translate(10px, 0) rotate(5deg);
+        }
+        100% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+      }
+
+      .triangle {
+        width: 0;
+        height: 0;
+        border-left: 75px solid transparent;
+        border-right: 75px solid transparent;
+        border-bottom: 130px solid #1a1a1a;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Magic 8-Ball</h1>
+
+      <div class="eight-ball" id="eightBall">
+        <div class="triangle"></div>
+        <div class="eight-ball-inner" id="answer">Ask a yes/no question</div>
+      </div>
+
+      <input
+        type="text"
+        class="question-input"
+        id="question"
+        placeholder="Ask your yes/no question here..."
+      />
+      <button class="shake-btn" id="shakeBtn">Shake the 8-Ball</button>
+    </div>
+
+    <script>
+      const answers = [
+        "It is certain.",
+        "It is decidedly so.",
+        "Without a doubt.",
+        "Yes - definitely.",
+        "You may rely on it.",
+        "As I see it, yes.",
+        "Most likely.",
+        "Outlook good.",
+        "Yes.",
+        "Signs point to yes.",
+        "Reply hazy, try again.",
+        "Ask again later.",
+        "Better not tell you now.",
+        "Cannot predict now.",
+        "Concentrate and ask again.",
+        "Don't count on it.",
+        "My reply is no.",
+        "My sources say no.",
+        "Outlook not so good.",
+        "Very doubtful.",
+      ];
+
+      const eightBall = document.getElementById("eightBall");
+      const answerElement = document.getElementById("answer");
+      const questionInput = document.getElementById("question");
+      const shakeBtn = document.getElementById("shakeBtn");
+
+      shakeBtn.addEventListener("click", function () {
+        if (questionInput.value.trim() === "") {
+          alert("Please ask a question first!");
+          return;
+        }
+
+        // Add shake animation
+        eightBall.classList.add("shake");
+
+        // Clear the answer during the shake
+        answerElement.textContent = "";
+
+        // Remove the shake class after animation completes
+        setTimeout(function () {
+          eightBall.classList.remove("shake");
+
+          // Get a random answer
+          const randomIndex = Math.floor(Math.random() * answers.length);
+          answerElement.textContent = answers[randomIndex];
+
+          // Change color based on positive/negative answer
+          if (randomIndex < 10) {
+            answerElement.style.color = "#4CAF50"; // Green for positive
+          } else if (randomIndex < 15) {
+            answerElement.style.color = "#FFC107"; // Yellow for neutral
+          } else {
+            answerElement.style.color = "#F44336"; // Red for negative
+          }
+        }, 500);
+      });
+    </script>
+  </body>
+</html>

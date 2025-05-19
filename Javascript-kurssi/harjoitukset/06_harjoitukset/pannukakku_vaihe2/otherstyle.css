@@ -1,17 +1,17 @@
 body {
-  background-color: #f7c66b;
+  background-color: #96b4b6;
   color: #000000;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
   min-height: 100vh;
-  overflow: auto;
-  font-family: "Delius Swash Caps", Arial, Helvetica, sans-serif;
+  overflow: hidden;
 }
 
 .container {
   display: flex;
+  align-items: flex-start;
   justify-content: center;
   width: 100vw;
 }
@@ -29,29 +29,19 @@ body {
 }
 
 .form-container {
-  flex: 0.5;
-  padding: 10px;
-  justify-items: center;
-  overflow-y: hidden;
-  border: 20px double #39221a;
-}
-
-input[type="checkbox"] {
-  accent-color: #d17b49;
-}
-
-input[type="radio"] {
-  accent-color: #d17b49;
+  flex: 1;
+  padding: 50px;
+  min-height: 100vh;
+  overflow-y: auto;
 }
 
 .price-banner {
   position: absolute;
   top: 20px;
   right: 20px;
-  background-color: #d17b49;
-  color: white;
+  background-color: #96b4b6;
+  color: black;
   border-radius: 50%;
-  border: 10px double brown;
   width: 100px;
   height: 100px;
   display: flex;

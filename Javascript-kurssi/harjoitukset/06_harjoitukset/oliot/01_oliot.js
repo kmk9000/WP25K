@@ -75,13 +75,29 @@ Testaa `createBook`-funktiota luomalla uusi kirja käyttäjän antamilla arvoill
 */
 
 // Kirjoita koodisi tähän
-function createBook([title, author, yearPublished, genres]) {
+/*function createBook([title, author, yearPublished, genres]) {
   this.title = title;
   this.author = author;
   this.yearPublished = yearPublished;
   this.genres = genres;
 }
-createBook("Lord of the Flies", "William Golding", "1954", "Romanticism");
+  createBook("Lord of the Flies", "William Golding", "1954", "Romanticism");*/
+function createBook(title, author, yearPublished, genres) {
+  return {
+    title: title,
+    author: author,
+    yearPublished: yearPublished,
+    genres: genres,
+  };
+}
+
+const newerBook = createBook(
+  "Lord of the Flies",
+  "William Golding",
+  "1954",
+  "Romanticism"
+);
+console.log("Luotu kirja:", newerBook);
 
 /* Tehtävä 6
 Muunna `library`-kokoelma JSON-merkkijonoksi ja tulosta se konsoliin.
@@ -150,12 +166,57 @@ Kirjoita silmukka, joka tulostaa kaikkien niiden elokuvien otsikot, joiden arvio
 */
 
 // Kirjoita koodisi tähän
+const movies = [
+  { title: "Inception", director: "Nolan", rating: 8.8 },
+  { title: "The Room", director: "Wiseau", rating: 3.7 },
+  { title: "Parasite", director: "Bong", rating: 8.6 },
+  { title: "The Godfather", director: "Coppola", rating: 9.2 },
+];
+let highRatedMovie = movies.filter((movies) => movies.rating > 8);
+console.log("Good movies:", highRatedMovie);
+
+for (const goodMovies of movies) {
+  if (goodMovies.rating > 8) {
+    console.log("Good movie:", goodMovies.title);
+  }
+}
 
 /* Tehtävä 10
 Kirjoita funktio `findOldestCar`, joka ottaa vastaan taulukon auto-olioita ja palauttaa auton, jolla on varhaisin `year`.
 */
 
 // Kirjoita koodisi tähän
+const carList = [
+  { brand: "Volvo", model: "240", year: 1985 },
+  { brand: "Toyota", model: "Corolla", year: 1992 },
+  { brand: "Ford", model: "Model T", year: 1927 },
+];
+
+function findOldestCar(cars) {
+  if (cars.length === 0) {
+    return null; // ilman tätä ohjelma kaatuu, jos taulukko on tyhjä
+  }
+  // Aloitetaan ensimmäisestä
+  let oldest = cars[0];
+
+  // Käydään läpi loput ja vertaa niitä edelliseen
+  for (let i = 1; i < cars.length; i++) {
+    if (cars[i].year < oldest.year) {
+      oldest = cars[i];
+    }
+  }
+
+  return oldest;
+}
+console.log("The oldest car is:", findOldestCar(carList));
+
+// vaihtoehtoisesti voit käyttää taulukon reduce()-metodia
+function findOldestCar2(cars) {
+  return cars.reduce((oldest, current) =>
+    current.year < oldest.year ? current : oldest
+  );
+}
+console.log("Vanhin auto on:", findOldestCar2(carList));
 
 /* Tehtävä 11
 Määrittele `userProfiles`-taulukko, joka sisältää käyttäjäolioita.
@@ -164,6 +225,14 @@ Kirjoita funktio, joka suodattaa ja palauttaa vain ne käyttäjät, jotka ovat y
 */
 
 // Kirjoita koodisi tähän
+const userProfiles = [
+  { username: "Tommi", email: "tommi@email.com", isAdmin: true },
+  { username: "Tiina", email: "tiina@email.com", isAdmin: false },
+  { username: "Saana", email: "saana@email.com", isAdmin: true },
+  { username: "Mikko", email: "mikko@email.com", isAdmin: false },
+];
+let areAdmins = userProfiles.filter((user) => user.isAdmin);
+console.log(areAdmins);
 
 /* Tehtävä 12
 Määrittele taulukko nimeltä `orders`, jossa jokaisella tilauksella on `orderId`, `customerName`, `totalAmount` ja `status` ("pending" tai "completed").
@@ -171,6 +240,31 @@ Kirjoita funktio, joka palauttaa vain valmiit tilaukset.
 */
 
 // Kirjoita koodisi tähän
+const orders = [
+  { orderId: 123, customerName: "Tommi", totalAmount: 300, status: "pending" },
+  {
+    orderId: 134,
+    customerName: "Tiina",
+    totalAmount: 450,
+    status: "completed",
+  },
+  {
+    orderId: 432,
+    customerName: "Saana",
+    totalAmount: 77,
+    status: "completed",
+  },
+  {
+    orderId: 825,
+    customerName: "Mikko",
+    totalAmount: 123,
+    status: "completed",
+  },
+];
+const readyOrders = orders.filter(
+  (readiness) => readiness.status === "completed"
+);
+console.log("Ready orders:", readyOrders);
 
 /* Tehtävä 13
 Luo olio nimeltä `smartphone`, jolla on ominaisuudet `brand`, `model`, `batteryLife` ja `is5GEnabled`.
@@ -178,6 +272,18 @@ Kirjoita funktio, joka tulostaa `"This phone supports 5G!"` jos `is5GEnabled` on
 */
 
 // Kirjoita koodisi tähän
+const smartphone = {
+  brand: "Samsung",
+  model: "S24",
+  batteryLife: "72 hours",
+  is5GEnabled: true,
+};
+function check5g(phone) {
+  if ((phone.is5GEnabled = true)) {
+    console.log("This phone supports 5G!");
+  } else console.log("This phone does not support 5G.");
+}
+check5g(smartphone);
 
 /* Tehtävä 14
 Määrittele olio nimeltä `fox`, jolla on ominaisuudet `name`, `age` ja `habitat`.
@@ -185,10 +291,32 @@ Kirjoita funktio, joka tulostaa `"This fox is young"` jos ikä on alle 3, ja `"T
 */
 
 // Kirjoita koodisi tähän
-
+const fox = { name: "Foxy", age: 3, habitat: "forest" };
+function youngFox() {
+  if (fox.age < 3) {
+    console.log("This fox is young");
+  } else {
+    console.log("This fox is an adult");
+  }
+}
+youngFox(fox);
 /* Tehtävä 15
 Määrittele taulukko nimeltä `employees`, jossa jokaisella työntekijällä on `name`, `position` ja `salary`.
 Kirjoita funktio, joka laskee kaikkien työntekijöiden yhteenlasketun palkan.
 */
 
 // Kirjoita koodisi tähän
+const employees = [
+  { name: "Tommi", position: "Coder", salary: 3900 },
+  { name: "Tiina", position: "Lead designer", salary: 4100 },
+  { name: "Mikko", position: "Writer", salary: 3700 },
+  { name: "Saana", position: "Art designer", salary: 3700 },
+];
+function salarySum(workers) {
+  let total = 0;
+  for (const pay of workers) {
+    total += pay.salary;
+  }
+  return total;
+}
+console.log("The total sum of salaries is:", salarySum(employees));

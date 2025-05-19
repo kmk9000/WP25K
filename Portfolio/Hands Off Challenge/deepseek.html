@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My AI-Crafted Homepage</title>
+    <style>
+      :root {
+        --bg-color: #f5f5f5;
+        --text-color: #333;
+        --header-bg: linear-gradient(135deg, #6e8efb, #a777e3);
+        --section-bg: white;
+        --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        --h2-color: #6e8efb;
+        --interactive-bg: #f0f8ff;
+        --footer-bg: #333;
+        --footer-text: white;
+      }
+      .dark-mode {
+        --bg-color: #222;
+        --text-color: #f0f0f0;
+        --header-bg: linear-gradient(135deg, #4a5fcf, #7d5bbe);
+        --section-bg: #333;
+        --shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        --h2-color: #8fa3fb;
+        --interactive-bg: #1a2a3a;
+        --footer-bg: #111;
+        --footer-text: #ddd;
+      }
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        transition: all 0.3s ease;
+      }
+      header {
+        background: var(--header-bg);
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+        position: relative;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .profile-img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid white;
+        box-shadow: var(--shadow);
+        margin: 0 auto;
+        display: block;
+      }
+      section {
+        background: var(--section-bg);
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+      }
+      h2 {
+        color: var(--h2-color);
+        border-bottom: 2px solid #eee;
+        padding-bottom: 0.5rem;
+      }
+      .interactive-box {
+        background: var(--interactive-bg);
+        padding: 1.5rem;
+        border-left: 4px solid #6e8efb;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .interactive-box:hover {
+        background: #e0f0ff;
+        transform: translateX(5px);
+      }
+      footer {
+        text-align: center;
+        padding: 2rem;
+        background: var(--footer-bg);
+        color: var(--footer-text);
+      }
+      .animated-text {
+        animation: colorChange 3s infinite alternate;
+      }
+      @keyframes colorChange {
+        from {
+          color: #6e8efb;
+        }
+        to {
+          color: #a777e3;
+        }
+      }
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: var(--section-bg);
+        color: var(--text-color);
+      }
+      .contact-form button {
+        background: #6e8efb;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .contact-form button:hover {
+        background: #5a7df4;
+      }
+      .theme-toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+      }
+      .theme-toggle:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+      .toggle-icon {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <button class="theme-toggle" id="themeToggle">
+        <span class="toggle-icon">🌙</span>
+        <span>Dark Mode</span>
+      </button>
+      <div class="container">
+        <h1 class="animated-text">Welcome to My Digital Space</h1>
+        <img
+          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80"
+          alt="Profile Image"
+          class="profile-img"
+        />
+        <p>Exploring the intersection of technology and creativity</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="about">
+        <h2>About Me</h2>
+        <p>
+          Hello! I'm a passionate individual fascinated by the potential of AI
+          and web technologies. This entire page was created through AI
+          collaboration without any manual coding. It represents a new frontier
+          in human-AI creative partnership.
+        </p>
+        <div
+          class="interactive-box"
+          onclick="alert('You clicked the interactive element!')"
+        >
+          <p>
+            Click me to see JavaScript in action! This is an example of the
+            interactive elements we can create through AI collaboration.
+          </p>
+        </div>
+      </section>
+
+      <section id="interests">
+        <h2>My Interests</h2>
+        <ul>
+          <li>Artificial Intelligence and Machine Learning</li>
+          <li>Web Development and Design</li>
+          <li>Human-Computer Interaction</li>
+          <li>Creative Coding</li>
+        </ul>
+      </section>
+
+      <section id="contact">
+        <h2>Get In Touch</h2>
+        <form
+          class="contact-form"
+          onsubmit="event.preventDefault(); formSubmitted()"
+        >
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>
+          Page created through AI collaboration | AI Model: DeepSeek Chat |
+          Prompt Engineer: Student
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      function formSubmitted() {
+        alert(
+          "Thank you for your message! This form doesn't actually submit data as this is a demo page."
+        );
+      }
+
+      // Animation effect for interactive box
+      const interactiveBox = document.querySelector(".interactive-box");
+      interactiveBox.addEventListener("mouseover", function () {
+        this.style.transform = "scale(1.02)";
+      });
+      interactiveBox.addEventListener("mouseout", function () {
+        this.style.transform = "scale(1)";
+      });
+
+      // Theme toggle functionality
+      const themeToggle = document.getElementById("themeToggle");
+      const toggleIcon = themeToggle.querySelector(".toggle-icon");
+      const toggleText = themeToggle.querySelector("span:not(.toggle-icon)");
+
+      // Check for saved theme preference or use preferred color scheme
+      const currentTheme =
+        localStorage.getItem("theme") ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light");
+
+      if (currentTheme === "dark") {
+        document.body.classList.add("dark-mode");
+        toggleIcon.textContent = "☀️";
+        toggleText.textContent = "Light Mode";
+      }
+
+      themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        const isDark = document.body.classList.contains("dark-mode");
+
+        toggleIcon.textContent = isDark ? "☀️" : "🌙";
+        toggleText.textContent = isDark ? "Light Mode" : "Dark Mode";
+
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+      });
+
+      // Console greeting
+      console.log("Welcome to my AI-generated homepage!");
+    </script>
+  </body>
+</html>

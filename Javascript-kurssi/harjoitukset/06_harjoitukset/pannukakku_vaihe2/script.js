@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const totalPriceDisplay = document.getElementById("totalPriceDisplay");
   const seeOrderButton = document.getElementById("seeOrder");
   const summaryText = document.getElementById("summaryText");
+  const typeSelect = document.getElementById("type");
 
   // These Arrays are needed
   let toppings = [];
@@ -61,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
     total += parseFloat(delivery.getAttribute("data-price"));
 
     // muotoillaan kokonaishinta desimaali luvuksi
-    let formattedTotal = total.toFixed(2) + "€";
+    let formattedTotal = total.toFixed(0) + "€";
     totalPriceBanner.textContent = formattedTotal;
     totalPriceDisplay.textContent = formattedTotal;
   }
@@ -69,10 +70,23 @@ document.addEventListener("DOMContentLoaded", function () {
   seeOrderButton.addEventListener("click", function () {
     // haetaan tilaajan nimi
     const customerName = document.getElementById("customerName").value.trim();
+    const selectedType = typeSelect.options[typeSelect.selectedIndex];
+    const delivery = document
+      .querySelector("input[name=delivery]:checked")
+      .parentElement.textContent.trim();
     // näytetään tilauksen tiedot
     let summary = `<strong>Customer:</strong> ${
       customerName || "(No Name)"
     }<br>`;
+    summary += `Type: ${selectedType.value}<br>`;
+    summary += `Toppings: ${
+      toppings.length > 0 ? toppings.join(", ") : "No toppings"
+    }<br>`;
+    summary += `Extras: ${
+      extras.length > 0 ? extras.join(", ") : "No extras"
+    }<br>`;
+    summary += `Delivery: ${delivery}<br>`;
+    summary += `Total price: ${totalPriceDisplay.textContent}`;
     summaryText.innerHTML = summary;
   });
 });

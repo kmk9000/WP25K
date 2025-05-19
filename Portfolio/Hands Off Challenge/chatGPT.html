@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My AI-Generated Homepage</title>
+    <style>
+      :root {
+        --bg-color: #ffffff;
+        --text-color: #000000;
+        --accent-color: #00838f;
+        --section-bg: #e0f7fa;
+        --button-bg: #00796b;
+        --button-hover: #004d40;
+      }
+
+      body.dark {
+        --bg-color: #121212;
+        --text-color: #ffffff;
+        --accent-color: #00acc1;
+        --section-bg: #263238;
+        --button-bg: #004d40;
+        --button-hover: #00251a;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: var(--bg-color);
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+        font-size: 1em;
+        transition: background 0.5s ease, color 0.5s ease;
+      }
+
+      header {
+        background-color: var(--accent-color);
+        color: white;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+      }
+
+      .toggle-container {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+
+      .toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 70px;
+        height: 34px;
+      }
+
+      .toggle-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        border-radius: 34px;
+        transition: background-color 0.4s;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "☀️";
+        font-size: 18px;
+        text-align: center;
+        line-height: 34px;
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        color: #000;
+        transition: transform 0.4s ease, background-color 0.4s ease;
+        border-radius: 50%;
+        box-shadow: 0 0 5px #ffeb3b;
+      }
+
+      input:checked + .slider {
+        background-color: #666;
+      }
+
+      input:checked + .slider:before {
+        transform: translateX(36px);
+        content: "🌙";
+        background-color: #333;
+        color: #fff;
+        box-shadow: 0 0 10px #03a9f4;
+      }
+
+      img {
+        display: block;
+        margin: 20px auto;
+        max-width: 200px;
+        border-radius: 50%;
+        border: 3px solid var(--accent-color);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      img:hover {
+        transform: scale(1.1);
+      }
+
+      section {
+        padding: 20px;
+        margin: 10px;
+        background-color: var(--section-bg);
+        border-radius: 10px;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      h2 {
+        color: var(--accent-color);
+        font-size: 1.5em;
+      }
+
+      p,
+      li {
+        text-align: justify;
+        text-justify: inter-word;
+      }
+
+      button {
+        background-color: var(--button-bg);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        margin: 10px 0;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        font-size: 1em;
+      }
+
+      button:hover {
+        background-color: var(--button-hover);
+      }
+
+      footer {
+        background-color: var(--section-bg);
+        color: var(--text-color);
+        text-align: center;
+        padding: 15px;
+        font-size: 0.9em;
+      }
+
+      #fact {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1.5s ease, transform 1.5s ease;
+        display: none;
+        text-align: justify;
+        text-justify: inter-word;
+        font-size: inherit;
+        max-width: 80%;
+        margin: 20px auto;
+        color: var(--text-color);
+      }
+
+      #fact.show {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      body.theme-transition {
+        animation: glow 1s ease;
+      }
+
+      @keyframes glow {
+        0% {
+          box-shadow: inset 0 0 0px rgba(255, 255, 255, 0);
+        }
+        50% {
+          box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.3);
+        }
+        100% {
+          box-shadow: inset 0 0 0px rgba(255, 255, 255, 0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to My Homepage</h1>
+      <p>Created through AI + Human collaboration</p>
+      <div class="toggle-container">
+        <label class="toggle-switch">
+          <input type="checkbox" id="themeToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </header>
+
+    <img
+      src="ChatGPT Image May 13, 2025 at 12_47_36 PM.png"
+      alt="Cartoon Robot Waving Hello"
+    />
+
+    <section>
+      <h2>About Me</h2>
+      <p>
+        Hello! I'm a student exploring the creative power of AI. This homepage
+        was built entirely through AI-generated code — no hands involved!
+      </p>
+    </section>
+
+    <section>
+      <h2>My Interests</h2>
+      <ul>
+        <li>Technology & AI</li>
+        <li>Digital Art</li>
+        <li>Music & Film</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Interactive Zone</h2>
+      <p>Click the button to reveal a fun fact!</p>
+      <button onclick="toggleFact()">Show/Hide Fun Fact</button>
+      <p id="fact">
+        Did you know? AI can generate entire web pages like this one!
+      </p>
+    </section>
+
+    <footer>
+      <p>
+        Created by AI model (ChatGPT by OpenAI) & Student as Prompt Engineer.
+      </p>
+      <p>All code generated by AI — zero manual edits.</p>
+    </footer>
+
+    <script>
+      function toggleFact() {
+        const fact = document.getElementById("fact");
+        if (fact.classList.contains("show")) {
+          fact.classList.remove("show");
+          setTimeout(() => {
+            fact.style.display = "none";
+          }, 500);
+        } else {
+          fact.style.display = "block";
+          void fact.offsetWidth;
+          fact.classList.add("show");
+        }
+      }
+
+      const toggle = document.getElementById("themeToggle");
+      const body = document.body;
+
+      function applyTheme(isDark) {
+        body.classList.add("theme-transition");
+        setTimeout(() => body.classList.remove("theme-transition"), 1000);
+        body.classList.toggle("dark", isDark);
+        toggle.checked = isDark;
+        localStorage.setItem("darkMode", isDark);
+      }
+
+      const saved = localStorage.getItem("darkMode");
+      if (saved === "true") {
+        applyTheme(true);
+      }
+
+      toggle.addEventListener("change", () => {
+        applyTheme(toggle.checked);
+      });
+    </script>
+  </body>
+</html>

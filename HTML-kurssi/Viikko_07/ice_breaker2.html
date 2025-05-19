@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ice Breaker 2</title>
+    <style>
+      .claims {
+        display: flex;
+        width: 100%;
+        padding: 1rem 0;
+        text-align: center;
+      }
+      #claim1 {
+        width: 25%;
+      }
+      #claim2 {
+        width: 25%;
+      }
+      #claim3 {
+        width: 25%;
+      }
+      #totuus {
+        width: 25%;
+        padding: 1rem 0;
+        background-color: lightblue;
+        margin-top: 1rem;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Three Claims, One Lie</h1>
+    <form>
+      <div id="claims">
+        <label for="claim1">Claim 1:</label><br />
+        <input type="text" id="claim1" name="claim1" /><br />
+
+        <label for="claim2">Claim 2:</label><br />
+        <input type="text" id="claim2" name="claim2" /><br />
+
+        <label for="claim3">Claim 3:</label><br />
+        <input type="text" id="claim3" name="claim3" /><br />
+      </div>
+
+      <div id="totuus">
+        <input type="checkbox" id="totuus1" class="totuus" name="totuus1" />
+        <label for="totuus1">Claim 1 is true</label><br />
+
+        <input type="checkbox" id="totuus2" class="totuus" name="totuus2" />
+        <label for="totuus2">Claim 2 is true</label><br />
+
+        <input type="checkbox" id="totuus3" class="totuus" name="totuus3" />
+        <label for="totuus3">Claim 3 is true</label><br />
+      </div>
+      <br />
+      <button type="button" onclick="hideFunction()">Hide the Truth!</button>
+      <button type="button" onclick="revealFunction()">
+        Reveal the Truth!
+      </button>
+    </form>
+
+    <script>
+      function hideFunction() {
+        document.getElementById("totuus").style.display = "none";
+      }
+
+      function revealFunction() {
+        document.getElementById("totuus").style.display = "block";
+      }
+    </script>
+  </body>
+</html>

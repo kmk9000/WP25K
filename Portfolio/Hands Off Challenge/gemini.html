@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Digital Homepage</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      .dark-mode {
+        background-color: #333;
+        color: #f4f4f4;
+      }
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .toggle-container {
+        position: relative;
+      }
+      .toggle-input {
+        position: absolute;
+        opacity: 0;
+        height: 0;
+        width: 0;
+      }
+      .toggle-label {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+      }
+      .toggle-label:before {
+        position: absolute;
+        content: "";
+        background-color: #ccc;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: 0.4s;
+        border-radius: 34px;
+      }
+      .toggle-label:after {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+      .toggle-input:checked + .toggle-label:before {
+        background-color: #2196f3;
+      }
+      .toggle-input:focus + .toggle-label:before {
+        box-shadow: 0 0 1px #2196f3;
+      }
+      .toggle-input:checked + .toggle-label:after {
+        transform: translateX(26px);
+      }
+      main {
+        padding: 20px;
+      }
+      .hero-image-container {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .hero-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+      .intro-paragraph {
+        line-height: 1.6;
+        margin-bottom: 30px;
+      }
+      .section {
+        margin-bottom: 40px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #fff;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+      }
+      .dark-mode .section {
+        background-color: #444;
+        color: #eee;
+        border-color: #555;
+      }
+      h2 {
+        color: #333;
+        border-bottom: 2px solid #333;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+        transition: color 0.3s ease, border-color 0.3s ease;
+      }
+      .dark-mode h2 {
+        color: #eee;
+        border-color: #eee;
+      }
+      footer {
+        text-align: center;
+        padding: 10px;
+        font-size: 0.8em;
+        color: #777;
+        transition: color 0.3s ease;
+      }
+      .dark-mode footer {
+        color: #bbb;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>My Digital Homepage</h1>
+      <div class="toggle-container">
+        <input type="checkbox" id="darkModeToggle" class="toggle-input" />
+        <label for="darkModeToggle" class="toggle-label"></label>
+      </div>
+    </header>
+    <main>
+      <div class="hero-image-container">
+        <img
+          src="placeholder.jpg"
+          alt="Placeholder Image"
+          class="hero-image"
+          width="300"
+        />
+      </div>
+      <p class="intro-paragraph">
+        Welcome to my digital space! This is a brief introduction about me and
+        what you'll find on this page.
+      </p>
+
+      <section id="about">
+        <h2>About Me</h2>
+        <p>This section will contain information about me.</p>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <p>Here are some of the projects I've worked on.</p>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Feel free to reach out to me through this contact information.</p>
+      </section>
+    </main>
+    <footer>
+      <p>Created with the help of an AI Model. Prompt Engineer: [Your Name]</p>
+    </footer>
+
+    <script>
+      const darkModeToggle = document.getElementById("darkModeToggle");
+      const body = document.body;
+      const sections = document.querySelectorAll(".section");
+      const headings = document.querySelectorAll("h2");
+      const footer = document.querySelector("footer");
+
+      darkModeToggle.addEventListener("change", () => {
+        body.classList.toggle("dark-mode");
+        sections.forEach((section) => section.classList.toggle("dark-mode"));
+        headings.forEach((heading) => heading.classList.toggle("dark-mode"));
+        footer.classList.toggle("dark-mode");
+      });
+    </script>
+  </body>
+</html>
