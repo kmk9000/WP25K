@@ -3,25 +3,89 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: lightblue;
-  color: #333;
+
+:root {
+  --bg-color: lightblue;
+  --text-color: #333;
+  --header-footer-bg: #222;
+  --header-footer-text: #fff;
+  --textbox-bg: beige;
+  --hero-bg: linear-gradient(
+    90deg,
+    rgb(87, 162, 192) 0%,
+    rgba(87, 199, 133, 1) 50%,
+    rgba(237, 221, 83, 1) 100%
+  );
+  --h1-color: #16337dff;
 }
 
-#hero-text:hover {
-  transform: scale(1.1);
+.dark-mode {
+  --bg-color: #222;
+  --text-color: #ddd;
+  --header-footer-bg: #111;
+  --header-footer-text: #ddd;
+  --textbox-bg: #333;
+  --hero-bg: linear-gradient(
+    90deg,
+    rgba(20, 60, 80, 1) 0%,
+    rgba(40, 90, 60, 1) 50%,
+    rgba(120, 110, 40, 1) 100%
+  );
+  --h1-color: #e6803dff;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-shadow: #222;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .headerFooter {
   display: flex;
-  align-content: center;
+  align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
   background: #222;
   color: #fff;
+}
+
+#textbox {
+  flex: 2;
+  padding: 25px;
+  margin: 25px;
+  border-radius: 25px;
+  background-color: var(--textbox-bg);
+}
+
+.hero {
+  padding: 25px 50px;
+  height: 150px;
+  background: var(--hero-bg);
+  border-radius: 0 0 50px 50px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--h1-color);
+}
+#hero-text {
+  animation: colorChange 5s infinite alternate;
+}
+@keyframes colorChange {
+  from {
+    color: #16337dff;
+  }
+  to {
+    color: #e6803dff;
+  }
+}
+
+#hero-text:hover {
+  transform: scale(1.2);
 }
 
 .menu-options {
@@ -32,7 +96,7 @@ body {
   position: absolute; /* Allows for positioning relative to the container */
   background-color: #222; /* Light background for the options */
   border: 1px solid #ccc;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 10); /* Add a shadow for depth */
   z-index: 10; /* Ensure the menu appears above other elements */
   border-radius: 10px;
   width: 200%;
@@ -45,11 +109,11 @@ body {
 }
 
 .menu-options li:hover {
-  background-color: #ddd; /* Slightly darker background on hover */
+  background-color: #ddd;
 }
 
 .menu-button {
-  background-color: #4caf50; /* Green button */
+  background-color: #4caf50;
   color: white;
   padding: 10px 15px;
   border: none;
@@ -59,7 +123,7 @@ body {
 }
 
 .menu-button:hover {
-  background-color: #367c39; /* Darker green on hover */
+  background-color: #367c39;
 }
 
 .menu-container {
@@ -67,32 +131,9 @@ body {
   display: inline-block; /* So it doesn't take up the whole width */
 }
 
-.hero {
-  padding: 25px;
-  background: #2a7b9b;
-  background: linear-gradient(
-    90deg,
-    rgba(42, 123, 155, 1) 0%,
-    rgba(87, 199, 133, 1) 50%,
-    rgba(237, 221, 83, 1) 100%
-  );
-}
-
-h1 {
-  color: #0056b3;
-  text-align: center;
-  margin-bottom: 1rem;
-}
 #main {
   display: flex;
   height: 50rem;
-}
-#textbox {
-  flex: 2;
-  padding: 25px;
-  margin: 25px;
-  background-color: beige;
-  border-radius: 25px;
 }
 
 p {
@@ -105,6 +146,8 @@ p {
   background-image: url(/Portfolio/HTML-project/images/david-underland-p294dPax7JE-unsplash.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  border-radius: 25px 0 0 25px;
+  margin: 25px 0;
 }
 .hero-image {
   background-image: url(/Portfolio/HTML-project/images/doremifasi-art-e22D9tInTKY-unsplash.jpg);
@@ -115,7 +158,39 @@ p {
   height: 60vh;
   width: 100%;
 }
+
+#backToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  display: none; /* Initially hidden */
+}
+
+#backToTopBtn:hover {
+  background-color: #555;
+}
+
 #otherLinks {
   display: flex;
   justify-content: space-around;
+  height: 100px;
 }
+
+/* 
+// CSS HEX color palette //
+--silver-lake-blue: #4783d3ff;
+--timberwolf: #d2d4d4ff;
+--powder-blue: #9cadc7ff;
+--dark-goldenrod: #9d7f39ff;
+--ultra-violet: #604f79ff;
+--pumpkin: #e6803dff;
+--yale-blue: #16337dff;
+*/

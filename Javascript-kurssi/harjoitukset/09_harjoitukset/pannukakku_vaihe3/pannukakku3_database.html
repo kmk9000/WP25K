@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saved pancake orders</title>
+  </head>
+  <body>
+    <div id="displayOrders"></div>
+
+    <script>
+      // Load orders or use empty array if none exist
+      const orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+      const ordersContainer = document.getElementById("displayOrders");
+
+      if (orders.length === 0) {
+        ordersContainer.innerHTML = "<p>No orders found.</p>";
+      } else {
+        orders.forEach((order, index) => {
+          const div = document.createElement("div");
+
+          // Determine emoji based on status
+          const statusIcons = {
+            Waiting: "🟡",
+            Ready: "🔵",
+            Delivered: "🟢",
+          };
+
+          const currentIcon = statusIcons[order.status] || "❔";
+          div.innerHTML = `
+    <h3>Order #${order.id}</h3>
+    <p><strong>Customer:</strong> ${order.customerName}</p>
+    <p><strong>Type:</strong> ${order.selectedPancake}</p>
+    <p><strong>Toppings:</strong> ${order.toppings.join(", ")}</p>
+    <p><strong>Extras:</strong> ${order.extras.join(", ")}</p>
+    <p><strong>Delivery:</strong> ${order.deliveryMethod}</p>
+    <p><strong>Total:</strong> ${order.totalPrice}</p>
+    <label>
+      <strong>Status:</strong>
+      <select class="status-dropdown" data-index="${index}">
+        <option value="Waiting" ${
+          order.status === "Waiting" ? "selected" : ""
+        }>Waiting</option>
+        <option value="Ready" ${
+          order.status === "Ready" ? "selected" : ""
+        }>Ready</option>
+        <option value="Delivered" ${
+          order.status === "Delivered" ? "selected" : ""
+        }>Delivered</option>
+      </select>
+    </label>
+    <hr>
+  `;
+
+          ordersContainer.appendChild(div);
+        });
+      }
+
+      // dropdown for status
+      document.addEventListener("change", (event) => {
+        if (event.target.classList.contains("status-dropdown")) {
+          const index = event.target.getAttribute("data-index");
+          const newStatus = event.target.value;
+
+          orders[index].status = newStatus;
+          localStorage.setItem("orders", JSON.stringify(orders));
+
+          const statusIcons = {
+            Waiting: "🟡",
+            Ready: "🔵",
+            Delivered: "🟢",
+          };
+          const indicator = document.getElementById(
+            `status-indicator-${index}`
+          );
+          if (indicator) {
+            indicator.textContent = statusIcons[newStatus] || "❔";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

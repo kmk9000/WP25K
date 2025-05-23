@@ -51,3 +51,13 @@ textContent will input the exact text as text
 <li> eka <li> will look like a list with inner, and will include <li> as text with text
 
 JSON (javascript object notation)
+
+npm (node package manager)
+(package on pieni kirjasto)
+sweetalert2 kirjasto voi olla hyödyllinen
+pitää ladata paketti jos haluaa kokeilla omalla koneella
+
+GIT kommennot
+git status (tarkistaa tilanteen)
+git add . (lisää kaiken, mikä muttettu (eli löytyy status kommennolla))
+git commit - m "message here" (lisää commit viestin)
